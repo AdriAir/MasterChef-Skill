@@ -59,6 +59,8 @@ EUFIC permite leer la metodología, pero el lector textual no expuso las selecci
 
 Los tests adversariales cubren dominios parecidos, credenciales en URL, HTTP, puertos no permitidos, IP literales, controles, escapes de ruta, recorrido de directorios, confusión de propósitos y destinos finales no autorizados. También comprueban rechazo de registros ambiguos. No prueban aislamiento de red ni detectan automáticamente instrucciones maliciosas dentro de HTML: esa frontera se aplica en las instrucciones de la skill.
 
-CI valida Python 3.9 y 3.13, con permisos de lectura y acciones fijadas a SHAs completos; Dependabot propone sus actualizaciones. Solo Python 3.9.6 se ejecutó localmente. La matriz remota aún requiere publicar el paquete y ejecutar GitHub Actions.
+CI valida Python 3.9 y 3.13, con permisos de lectura y acciones fijadas a SHAs completos; Dependabot propone sus actualizaciones. Solo Python 3.9.6 se ejecutó localmente. Tras publicar el commit inicial `344686f4022868e19cb4eaa5c753170da1e1ddf2`, [GitHub Actions completó correctamente la matriz remota](https://github.com/AdriAir/MasterChef-Skill/actions/runs/37986927303).
 
-Se verificó instalación desde el checkout local. La instalación desde `AdriAir/MasterChef-Skill` sigue pendiente de publicación de estos archivos y acceso Git autenticado al repositorio privado. La conexión GitHub de Codex no implica que Git tenga credenciales configuradas. No se modificó la visibilidad del repositorio.
+Se verificó instalación desde el checkout local y desde `git@github.com:AdriAir/MasterChef-Skill.git` con acceso SSH autenticado. En ambos casos el perfil temporal descubrió `masterchef@masterchef`, lo instaló, lo habilitó y validó el registro de la copia instalada. La prueba remota se puede repetir con `python3 scripts/smoke_plugin.py --source git@github.com:AdriAir/MasterChef-Skill.git`.
+
+La fuente abreviada `AdriAir/MasterChef-Skill` requiere credenciales Git adecuadas para su transporte HTTPS; se verificó el transporte SSH documentado como alternativa. La conexión GitHub de Codex no implica que Git tenga credenciales configuradas. No se modificó la visibilidad privada del repositorio.

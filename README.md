@@ -11,7 +11,7 @@ Skill de Codex que encuentra **una receta verificable, completa y en español**,
 
 ## Instalar desde GitHub
 
-Una vez publicados los archivos en el repositorio:
+Registra el marketplace e instala el plugin:
 
 ```bash
 codex plugin marketplace add AdriAir/MasterChef-Skill --ref main
@@ -77,8 +77,14 @@ python3 -m venv .venv
 python3 scripts/smoke_plugin.py
 ```
 
+Para repetir la comprobación desde GitHub con acceso SSH autenticado:
+
+```bash
+python3 scripts/smoke_plugin.py --source git@github.com:AdriAir/MasterChef-Skill.git
+```
+
 PyYAML se usa únicamente en la validación de desarrollo de los manifiestos YAML. El helper de la skill y sus pruebas de URL funcionan con la biblioteca estándar.
 
-El smoke test crea un `CODEX_HOME` temporal solo para sus procesos hijos: registra el marketplace local, instala el plugin, comprueba que queda habilitado y ejecuta el helper de la copia instalada desde otro directorio. No modifica la instalación personal ni demuestra acceso Git remoto o calidad de las recetas; esos aspectos se verifican por separado.
+El smoke test crea un `CODEX_HOME` temporal solo para sus procesos hijos: registra el marketplace, instala el plugin, comprueba que queda habilitado y ejecuta el helper de la copia instalada desde otro directorio. Por defecto usa el checkout local; `--source` permite probar el acceso Git remoto con la misma comprobación. No modifica la instalación personal ni demuestra calidad de las recetas; esta se evalúa por separado.
 
 Los casos conductuales y el estado de verificación están en [docs/validation.md](docs/validation.md).

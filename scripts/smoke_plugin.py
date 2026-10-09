@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Install the local plugin in an isolated child-process Codex home."""
+"""Install a local or remote plugin in an isolated child-process Codex home."""
 
+import argparse
 import json
 import os
 import shutil
@@ -12,7 +13,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", default=str(ROOT),
+                        help="Marketplace directory or authenticated Git repository (default: local checkout)")
+    args = parser.parse_args(argv)
     codex = shutil.which("codex")
     if not codex:
         raise RuntimeError("codex is not available on PATH")
@@ -26,7 +31,7 @@ def main():
                 raise RuntimeError("Codex command failed: " + result.stderr.strip())
             return json.loads(result.stdout)
 
-        added = run(["plugin", "marketplace", "add", str(ROOT), "--json"])
+        added = run(["plugin", "marketplace", "add", args.source, "--json"])
         if added["marketplaceName"] != "masterchef":
             raise RuntimeError("Unexpected marketplace name")
         available = run(["plugin", "list", "--available", "--json"])
