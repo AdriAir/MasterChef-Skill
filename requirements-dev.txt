@@ -1,0 +1,2 @@
+# Solo para validar YAML en desarrollo; el helper no tiene dependencias externas.
+PyYAML==6.0.3

@@ -1,0 +1,6 @@
+interface:
+  display_name: "MasterChef"
+  short_description: "Recetas fieles según despensa, antojo y contexto"
+  default_prompt: "Usa $masterchef para encontrar y preparar una receta fiel en español."
+policy:
+  allow_implicit_invocation: true

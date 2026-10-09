@@ -1,0 +1,17 @@
+{
+  "name": "masterchef",
+  "version": "0.1.0",
+  "description": "Recetas verificadas en español según tu despensa, antojo y contexto local.",
+  "author": { "name": "AdriAir" },
+  "repository": "https://github.com/AdriAir/MasterChef-Skill",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MasterChef",
+    "shortDescription": "Recetas fieles de fuentes autorizadas, en español.",
+    "longDescription": "Encuentra una receta concreta, aprovecha ingredientes disponibles o descubre un plato según tus antojos, el tiempo y la temporada. Mantiene fidelidad a una receta original y utiliza un registro cerrado de fuentes.",
+    "developerName": "AdriAir",
+    "category": "Productivity",
+    "capabilities": ["Read", "Interactive"],
+    "defaultPrompt": ["Usa $masterchef para encontrar una receta verificable con mis ingredientes."]
+  }
+}

@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "hogarmania",
+      "name": "Hogarmania",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.hogarmania.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "La receta puede usarse en cualquier localidad; no prueba temporada ni seguridad.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Recetario de cocineros identificados; exigir nombre del chef en cada receta y elaboración completa.",
+      "evidence_urls": [
+        "https://www.hogarmania.com/",
+        "https://www.hogarmania.com/cocina/recetas/tortitas-de-azucar-y-canela_23_1161483.html"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_chef",
+      "path_prefixes": [
+        "/cocina/recetas/"
+      ]
+    },
+    {
+      "id": "cocina-rtve",
+      "name": "Cocina RTVE",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.rtve.es",
+        "amp.rtve.es"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Solo artículos culinarios de chefs identificados, aunque la sección también contenga otros programas.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Publicación original de recetas televisivas de chefs identificados. Excluir noticias sin receta y concursos sin autor profesional identificado.",
+      "evidence_urls": [
+        "https://www.rtve.es/television/torres-en-la-cocina/equipo/",
+        "https://www.rtve.es/television/20220613/receta-callos-hermanos-torres/2330069.shtml"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_chef",
+      "path_prefixes": [
+        "/television/"
+      ]
+    },
+    {
+      "id": "directo-al-paladar",
+      "name": "Directo al Paladar",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.directoalpaladar.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Usar recetas originales con ingredientes y método completo; excluir noticias, comentarios y publicidad.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Medio gastronómico con equipo editorial y autoría pública; comprobar la ficha de receta y su responsable.",
+      "evidence_urls": [
+        "https://www.directoalpaladar.com/quienes-somos",
+        "https://www.directoalpaladar.com/recetas-de-huevos-y-tortillas/empezando-en-la-cocina-receta-de-tortilla-de-patatas-con-cebolla"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/recetas-de-huevos-y-tortillas/",
+        "/recetas-de-carnes-y-aves/",
+        "/recetas-de-pescados-y-mariscos/",
+        "/recetas-de-legumbres-y-verduras/",
+        "/recetas-de-arroces/",
+        "/recetas-de-pasta/",
+        "/recetas-de-ensaladas/",
+        "/recetas-de-sopas-y-cremas/",
+        "/postres/",
+        "/recetas-vegetarianas/"
+      ]
+    },
+    {
+      "id": "el-comidista",
+      "name": "El Comidista",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "elpais.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Solo recetas originales de esta sección; una noticia o menú enlazado no sustituye la receta completa.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Sección gastronómica de El País con autores identificados; exigir ficha completa accesible y autoría.",
+      "evidence_urls": [
+        "https://elpais.com/gastronomia/el-comidista/",
+        "https://elpais.com/autor/el-comidista/",
+        "https://elpais.com/gastronomia/el-comidista/2026-10-05/cinco-recetas-faciles-con-pollo-y-pavo-para-cocinar-una-vez-y-comer-tres.html"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/gastronomia/el-comidista/"
+      ]
+    },
+    {
+      "id": "recetas-de-rechupete",
+      "name": "Recetas de Rechupete",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.recetasderechupete.com",
+        "recetasderechupete.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Las recetas usan slugs en la raíz; permitir una ruta no prueba que sea una receta. Excluir comentarios y otros contenidos.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Equipo liderado por Alfonso López que declara cocinar sus recetas; exigir autoría y receta completa, no una recopilación.",
+      "evidence_urls": [
+        "https://www.recetasderechupete.com/sobre-recetas-de-rechupete/",
+        "https://recetasderechupete.com/acercaderecetasderechupete/",
+        "https://www.recetasderechupete.com/tortilla-de-patatas-espanola-receta-paso-a-paso/5182/"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/"
+      ]
+    },
+    {
+      "id": "serious-eats",
+      "name": "Serious Eats",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.seriouseats.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Recetas con slugs en raíz; descartar artículos sin ficha, comentarios, publicidad y consejos no incluidos en la receta.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "El medio describe desarrollo, pruebas y catas por profesionales y revisores cruzados; exigir receta y responsable identificados.",
+      "evidence_urls": [
+        "https://www.seriouseats.com/about-us-5120006",
+        "https://www.seriouseats.com/caesar-spaghetti-recipe-8667582"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/"
+      ]
+    },
+    {
+      "id": "king-arthur-baking",
+      "name": "King Arthur Baking",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.kingarthurbaking.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Conservar tipo de horno, molde, cantidades y levados de cada receta; no extender sus datos a otros productos.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Recetas del equipo de cocina de pruebas con proceso de desarrollo y ensayo descrito públicamente.",
+      "evidence_urls": [
+        "https://www.kingarthurbaking.com/author/king-arthur-test-kitchen",
+        "https://www.kingarthurbaking.com/recipes/classic-sandwich-bread-recipe"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/recipes/"
+      ]
+    },
+    {
+      "id": "bon-appetit",
+      "name": "Bon Appétit",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.bonappetit.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Solo fichas accesibles completas; si hay muro de pago o método incompleto, usar otra fuente.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Cocina de pruebas y revisión editorial documentadas por el propio medio; exigir autoría y ficha completa.",
+      "evidence_urls": [
+        "https://www.bonappetit.com/bon-appetit/story/how-we-develop-recipes-bon-appetit-test-kitchen",
+        "https://www.bonappetit.com/recipe/simple-spaghetti-carbonara"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/recipe/"
+      ]
+    },
+    {
+      "id": "jamie-oliver",
+      "name": "Jamie Oliver",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.jamieoliver.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Identificar al autor o equipo de cada receta, incluidos invitados; conservar especificación de horno.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Web oficial del cocinero con proceso de pruebas y equipo editorial descritos; verificar cada ficha concreta.",
+      "evidence_urls": [
+        "https://www.jamieoliver.com/recipes/about-our-recipes/",
+        "https://www.jamieoliver.com/recipes/pasta/gennaro-s-classic-spaghetti-carbonara/"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/recipes/"
+      ]
+    },
+    {
+      "id": "recipetin-eats",
+      "name": "RecipeTin Eats",
+      "purposes": [
+        "recipe"
+      ],
+      "hosts": [
+        "www.recipetineats.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Recetas con slugs en raíz; solo ficha original atribuida, sin comentarios de lectores ni artículos sin receta.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Publicación de Nagi Maehashi con autoría de las recetas y pruebas de equipo documentadas en su libro.",
+      "evidence_urls": [
+        "https://www.recipetineats.com/nagi-recipetin-eats/",
+        "https://www.recipetineats.com/cookbook/",
+        "https://www.recipetineats.com/chocolate-chip-cookies/"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "named_author_or_editorial",
+      "path_prefixes": [
+        "/"
+      ]
+    },
+    {
+      "id": "aemet",
+      "name": "AEMET",
+      "purposes": [
+        "weather"
+      ],
+      "hosts": [
+        "www.aemet.es"
+      ],
+      "regions": [
+        "ES"
+      ],
+      "coverage_note": "Predicción municipal en España. Comprobar fecha, hora local y vigencia; el pronóstico no es una observación.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Servicio meteorológico estatal español con predicciones municipales fechadas.",
+      "evidence_urls": [
+        "https://www.aemet.es/es/eltiempo/prediccion/municipios"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "agency_and_forecast_time",
+      "path_prefixes": [
+        "/es/eltiempo/prediccion/municipios/"
+      ],
+      "paths": [
+        "/es/eltiempo/prediccion/municipios"
+      ]
+    },
+    {
+      "id": "open-meteo-weather",
+      "name": "Open-Meteo Forecast API",
+      "purposes": [
+        "weather"
+      ],
+      "hosts": [
+        "api.open-meteo.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Cobertura global de modelos. Comprobar coordenadas de ciudad, zona horaria, fecha y unidades; no usar datos fuera del horizonte.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Proveedor que documenta sus modelos meteorológicos y una API de predicción pública.",
+      "evidence_urls": [
+        "https://open-meteo.com/en/docs"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "provider_model_and_forecast_time",
+      "paths": [
+        "/v1/forecast"
+      ]
+    },
+    {
+      "id": "open-meteo-geocoding",
+      "name": "Open-Meteo Geocoding API",
+      "purposes": [
+        "geocoding"
+      ],
+      "hosts": [
+        "geocoding-api.open-meteo.com"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Resolver ciudad y país; si hay homónimos confirmar región. No enviar dirección, alergias ni datos de cuenta.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "API documentada de búsqueda de localidades que devuelve país, coordenadas y zona horaria.",
+      "evidence_urls": [
+        "https://open-meteo.com/en/docs/geocoding-api"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "provider",
+      "paths": [
+        "/v1/search"
+      ]
+    },
+    {
+      "id": "mapa-season",
+      "name": "MAPA: calendarios de temporada",
+      "purposes": [
+        "season"
+      ],
+      "hosts": [
+        "www.mapa.gob.es"
+      ],
+      "regions": [
+        "ES"
+      ],
+      "coverage_note": "Calendario orientativo español; distinguir producción de temporada de conservación y disponibilidad comercial. No extrapolar a microclimas.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Calendarios y guía oficial del Ministerio de Agricultura español; si el PDF no puede leerse usar otra fuente autorizada de cobertura válida.",
+      "evidence_urls": [
+        "https://www.mapa.gob.es/es/alimentacion/temas/desperdicio/11calendario_verduras_completo_tcm30-623767.pdf"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "agency_and_calendar_scope",
+      "paths": [
+        "/es/alimentacion/temas/desperdicio/11calendario_verduras_completo_tcm30-623767.pdf",
+        "/dam/mapa/contenido/alimentacion/temas/estrategia-desperdicios/nueva-web-2022/7.-que-puedes-hacer/7.5-en-la-restauracion/documentacion-restauracion/2guia_restauracion_web_2017.pdf"
+      ]
+    },
+    {
+      "id": "eufic-season",
+      "name": "EUFIC: mapa europeo de temporada",
+      "purposes": [
+        "season"
+      ],
+      "hosts": [
+        "www.eufic.org"
+      ],
+      "regions": [
+        "EUFIC_MAP"
+      ],
+      "coverage_note": "Solo países y productos con datos en el mapa consultado. EUFIC distingue fuentes de temporada y locales; no asumir cobertura de toda Europa.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Mapa de EUFIC que reúne fuentes nacionales y publica su metodología y límites de cobertura.",
+      "evidence_urls": [
+        "https://www.eufic.org/en/explore-seasonal-fruit-and-vegetables-in-europe",
+        "https://www.eufic.org/en/page/european-national-sources-to-find-information-on-seasonal-fruit-and-vegetables"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "organization_country_month_and_scope",
+      "paths": [
+        "/en/explore-seasonal-fruit-and-vegetables-in-europe",
+        "/en/page/european-national-sources-to-find-information-on-seasonal-fruit-and-vegetables"
+      ]
+    },
+    {
+      "id": "food-hero-season",
+      "name": "Food Hero / OSU Extension: temporada en Oregón",
+      "purposes": [
+        "season"
+      ],
+      "hosts": [
+        "foodhero.org"
+      ],
+      "regions": [
+        "US-OR"
+      ],
+      "coverage_note": "Guía mensual de Oregón. Distingue producto cultivado allí de producto importado con mejor calidad/precio; no representa todo EE. UU.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Programa de OSU Extension con guía que especifica claramente origen y meses de disponibilidad de frutas y verduras.",
+      "evidence_urls": [
+        "https://foodhero.org/oregon-harvest-schools",
+        "https://foodhero.org/sites/foodhero-prod/files/health-tools/SeasonalF%2BV_100124.pdf"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "program_region_month_and_local_status",
+      "paths": [
+        "/sites/foodhero-prod/files/health-tools/SeasonalF%2BV_100124.pdf"
+      ]
+    },
+    {
+      "id": "sydney-markets-season",
+      "name": "Sydney Markets: productos de temporada",
+      "purposes": [
+        "season"
+      ],
+      "hosts": [
+        "www.sydneymarkets.com.au",
+        "www.sydneymarkets.com"
+      ],
+      "regions": [
+        "AU-NSW"
+      ],
+      "coverage_note": "Ámbito de mercado de Sídney/NSW; no inferir cosecha local ni temporada del conjunto de Australia. Comprobar mes y si el artículo es de archivo.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Mercado mayorista que publica guías mensuales de productos. El cambio de .com.au a .com se comprobó explícitamente.",
+      "evidence_urls": [
+        "https://www.sydneymarkets.com.au/markets/produce-market/whats-in-season/archive/summer/february.html",
+        "https://www.sydneymarkets.com/markets/produce-market/whats-in-season/archive/summer/february.html"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "market_region_month_and_archive_date",
+      "path_prefixes": [
+        "/markets/produce-market/whats-in-season/"
+      ]
+    },
+    {
+      "id": "vegetables-nz-season",
+      "name": "Vegetables.co.nz: disponibilidad estacional",
+      "purposes": [
+        "season"
+      ],
+      "hosts": [
+        "www.vegetables.co.nz"
+      ],
+      "regions": [
+        "NZ"
+      ],
+      "coverage_note": "Verduras de Nueva Zelanda; distinguir disponibilidad y abundancia, con variación regional. No prueba temporada de frutas.",
+      "languages": [
+        "en"
+      ],
+      "rationale": "Organización sectorial de productores con calendarios de disponibilidad y advertencia de variaciones por región y clima.",
+      "evidence_urls": [
+        "https://www.vegetables.co.nz/in-the-kitchen/whats-in-season",
+        "https://www.vegetables.co.nz/assets/NZ_Vegetable_Seasonal_Availability.pdf"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "organization_country_month_and_scope",
+      "paths": [
+        "/in-the-kitchen/whats-in-season",
+        "/assets/NZ_Vegetable_Seasonal_Availability.pdf",
+        "/assets/Vegetables-co-nz/resources/garden-to-table/A3-SEASONABILITY-CHART-2021-WEB.pdf"
+      ]
+    },
+    {
+      "id": "aesan-food-safety",
+      "name": "AESAN",
+      "purposes": [
+        "food_safety"
+      ],
+      "hosts": [
+        "www.aesan.gob.es",
+        "aesan.gob.es"
+      ],
+      "regions": [
+        "ES"
+      ],
+      "coverage_note": "Recomendaciones oficiales aplicables en España. Comprobar alimento, técnica, destinatario y vigencia; no inventar temperaturas o plazos.",
+      "languages": [
+        "es"
+      ],
+      "rationale": "Agencia Española de Seguridad Alimentaria y Nutrición: información oficial para manejo seguro y alérgenos.",
+      "evidence_urls": [
+        "https://www.aesan.gob.es/",
+        "https://aesan.gob.es/seguridad-alimentaria/informacion-alimentaria"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "agency_and_specific_guidance",
+      "path_prefixes": [
+        "/seguridad-alimentaria/",
+        "/AECOSAN/docs/documentos/seguridad_alimentaria/",
+        "/AECOSAN/docs/documentos/publicaciones/seguridad_alimentaria/"
+      ]
+    },
+    {
+      "id": "who-food-safety",
+      "name": "Organización Mundial de la Salud",
+      "purposes": [
+        "food_safety"
+      ],
+      "hosts": [
+        "www.who.int"
+      ],
+      "regions": [
+        "global"
+      ],
+      "coverage_note": "Orientaciones generales internacionales. Una recomendación general no aporta por sí sola parámetros específicos para una receta.",
+      "languages": [
+        "es",
+        "en"
+      ],
+      "rationale": "Organismo internacional de salud pública con orientaciones oficiales de inocuidad y las cinco claves para alimentos seguros.",
+      "evidence_urls": [
+        "https://www.who.int/health-topics/food-safety"
+      ],
+      "checked_at": "2026-10-09",
+      "attribution": "organization_and_specific_guidance",
+      "paths": [
+        "/health-topics/food-safety",
+        "/news-room/fact-sheets/detail/food-safety",
+        "/publications/i/item/9789241594639"
+      ]
+    }
+  ]
+}
