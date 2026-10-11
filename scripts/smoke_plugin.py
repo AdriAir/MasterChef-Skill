@@ -2,6 +2,7 @@
 """Install a local or remote plugin in an isolated child-process Codex home."""
 
 import argparse
+import hashlib
 import json
 import os
 import shutil
@@ -11,6 +12,24 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+TRUSTED_HELPER = ROOT / "skills" / "masterchef" / "scripts" / "validate_sources.py"
+
+
+def validate_installed_registry(skill, task_home, task_env):
+    """Check installed data with trusted local code; never run a remote script."""
+    skill = Path(skill).resolve()
+    installed_helper = skill / "scripts" / "validate_sources.py"
+    registry = skill / "references" / "sources.json"
+    for installed_file in (installed_helper, registry):
+        if not installed_file.resolve().is_relative_to(skill):
+            raise RuntimeError("Installed file escapes the skill directory")
+    if hashlib.sha256(installed_helper.read_bytes()).digest() != hashlib.sha256(TRUSTED_HELPER.read_bytes()).digest():
+        raise RuntimeError("Installed helper integrity mismatch")
+    checked = subprocess.run(
+        [sys.executable, "-I", str(TRUSTED_HELPER), "validate", "--registry", str(registry)],
+        cwd=task_home, env=task_env, capture_output=True, text=True, timeout=30)
+    if checked.returncode or json.loads(checked.stdout).get("valid") is not True:
+        raise RuntimeError("Installed source registry failed validation")
 
 
 def main(argv=None):
@@ -45,15 +64,12 @@ def main(argv=None):
         skill = Path(installation["installedPath"]) / "skills" / "masterchef"
         if not (skill / "SKILL.md").is_file() or not (skill / "agents" / "openai.yaml").is_file():
             raise RuntimeError("Installed skill is incomplete")
-        checked = subprocess.run([sys.executable, str(skill / "scripts" / "validate_sources.py"), "validate"],
-                                 cwd=task_home, env=task_env, capture_output=True, text=True, timeout=30)
-        if checked.returncode or json.loads(checked.stdout).get("valid") is not True:
-            raise RuntimeError("Installed source registry failed validation")
+        validate_installed_registry(skill, task_home, task_env)
         for reference in ("source-policy.md", "fidelity.md", "context.md"):
             if not (skill / "references" / reference).is_file():
                 raise RuntimeError("Missing installed reference: " + reference)
     print(json.dumps({"valid": True, "plugin": "masterchef@masterchef", "version": "0.1.0",
-                      "checks": ["discovery", "installation", "enabled", "installed_skill", "installed_registry"]}))
+                      "checks": ["discovery", "installation", "enabled", "installed_skill", "helper_integrity", "installed_registry"]}))
 
 
 if __name__ == "__main__":
