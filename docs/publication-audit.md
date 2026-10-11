@@ -31,3 +31,13 @@ La actualización remota autorizada reemplaza tres ramas y la etiqueta publicada
 Pasan 21 pruebas de Python, la validación del registro cerrado, la validación del paquete, el validador oficial de skills y la instalación local en un `CODEX_HOME` temporal. Los resultados y escenarios están en [validation.md](validation.md).
 
 La comprobación del remoto tras la actualización determina si quedan referencias al correo histórico. El cambio de visibilidad y la instalación pública sin credenciales requieren esa revisión previa; la instalación SSH autenticada no demuestra el caso anónimo.
+
+## Resultado después del push
+
+La actualización atómica de las tres ramas y `v0.1.0` se completó con protección frente a cambios concurrentes. La revisión remota `3e62c4a2babfe40a133ae47ba2612e4769dfca43` contiene los commits de seguridad y preparación pública; GitHub reconoce la licencia MIT.
+
+Un nuevo espejo remoto, auditado de forma independiente, contiene 75 objetos: ocho commits, 33 árboles, 33 blobs y una etiqueta, sin objetos inalcanzables. Las ocho referencias anunciadas incluyen las tres ramas, la etiqueta y las cabeceras e integraciones de las dos pull requests. GitHub regeneró las referencias de integración sobre el historial saneado.
+
+La comparación con el correo original no encuentra coincidencias en ninguno de esos 75 objetos. Los dos commits originales ya no están presentes en el espejo y los metadatos de commits y etiqueta usan direcciones `noreply`. Tampoco se detectaron secretos, credenciales en URLs, rutas personales ni atribuciones empresariales ajenas. Esto demuestra el estado de las referencias anunciadas; no acredita la purga de cachés de GitHub o clones anteriores.
+
+La instalación remota por SSH con `CODEX_HOME` temporal pasa descubrimiento, instalación, habilitación, integridad del helper y validación del registro. [CI completó correctamente la revisión subida](https://github.com/AdriAir/MasterChef-Skill/actions/runs/38164193234). El repositorio continúa privado y la instalación anónima sigue pendiente de una futura publicación.
