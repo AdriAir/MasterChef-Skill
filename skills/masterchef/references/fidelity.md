@@ -4,6 +4,7 @@ Lee antes de redactar cualquier receta. La respuesta debe corresponder a una sol
 
 - Conserva por defecto nombre, raciones, cantidades, orden y pasos publicados.
 - Traduce con redacción propia sin cambiar el significado.
+- Extrae los datos culinarios necesarios y explica la elaboración con tus palabras; no reproduzcas fotografías, introducciones, artículos ni comentarios. La autorización de una fuente no concede derechos sobre sus textos o imágenes.
 - Conserva los tiempos y temperaturas publicados; si faltan, escribe “no indicado”. Nunca los inventes.
 - No inventes molde, equipo, rendimiento ni técnica. No conviertas volumen a peso sin evidencia explícita de la fuente.
 - Separa ingredientes obligatorios de opciones del autor. Las opciones pueden omitirse indicando qué se omitió; no las presentes como sustituciones.

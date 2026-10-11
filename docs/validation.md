@@ -12,7 +12,7 @@ Revisión inicial: 9 de octubre de 2026. El paquete se probó con Python 3.9.6 y
 | `skill-creator/scripts/quick_validate.py skills/masterchef` | `Skill is valid!` |
 | `python3 scripts/smoke_plugin.py` | Marketplace descubierto, plugin instalado y habilitado; skill y registro de la copia instalada válidos |
 
-El smoke test usa un directorio temporal independiente en los procesos hijos. Comprueba `masterchef@masterchef` y ejecuta el helper instalado desde un directorio de trabajo diferente. No instala nada en el perfil personal. El validador oficial pertenece a la distribución de Codex, no es una dependencia de ejecución de MasterChef.
+El smoke test usa un directorio temporal independiente en los procesos hijos. La versión inicial comprobaba `masterchef@masterchef` y ejecutaba el helper instalado desde un directorio de trabajo diferente; la revisión de publicación descrita al final sustituye esa ejecución por código local conocido. No instala nada en el perfil personal. El validador oficial pertenece a la distribución de Codex, no es una dependencia de ejecución de MasterChef.
 
 La implementación del helper siguió RED → GREEN: primero falló la importación del módulo inexistente; después se detectaron escapes anidados/UTF-8 inválido, claves JSON duplicadas, campos desconocidos y entradas con varios propósitos. Se añadieron los rechazos correspondientes y se repitió la suite. La revisión independiente de seguridad confirmó que los tres hallazgos del esquema están resueltos.
 
@@ -63,4 +63,10 @@ CI valida Python 3.9 y 3.13, con permisos de lectura y acciones fijadas a SHAs c
 
 Se verificó instalación desde el checkout local y desde `git@github.com:AdriAir/MasterChef-Skill.git` con acceso SSH autenticado. En ambos casos el perfil temporal descubrió `masterchef@masterchef`, lo instaló, lo habilitó y validó el registro de la copia instalada. La prueba remota se puede repetir con `python3 scripts/smoke_plugin.py --source git@github.com:AdriAir/MasterChef-Skill.git`.
 
-La fuente abreviada `AdriAir/MasterChef-Skill` requiere credenciales Git adecuadas para su transporte HTTPS; se verificó el transporte SSH documentado como alternativa. La conexión GitHub de Codex no implica que Git tenga credenciales configuradas. No se modificó la visibilidad privada del repositorio.
+Estas pruebas de v0.1.0 se realizaron con el repositorio privado: la fuente abreviada requería credenciales Git adecuadas para HTTPS y se verificó SSH autenticado como alternativa. Es evidencia histórica, no una comprobación de instalación pública anónima. La preparación posterior para distribución pública y su auditoría están en [publication-audit.md](publication-audit.md).
+
+## Revisión para distribución pública: 11 de octubre de 2026
+
+La suite actual pasa **21 pruebas**: las 16 iniciales y cinco pruebas del smoke test. Estas comprueban una instalación válida desde otro directorio, rechazo de un helper modificado sin ejecutarlo, aislamiento frente a módulos inyectados por `PYTHONPATH`, rechazo de un registro inválido y rechazo de enlaces simbólicos que salgan del directorio de la skill.
+
+El smoke test compara la integridad del helper instalado y valida el registro con el helper local usando Python en modo aislado (`-I`). La instalación local con `CODEX_HOME` temporal, el registro de fuentes, el validador del paquete y `quick_validate.py` vuelven a pasar. No se ha probado todavía una instalación remota anónima: el repositorio continúa privado.

@@ -12,6 +12,8 @@ Usa esta skill para recomendar o preparar una receta concreta, respetando restri
 3. **Sensaciones/antojos**: busca por textura, sabor, ocasión o antojo sin diagnosticar sensaciones.
 4. **Descubrimiento contextual**: usa ciudad y país solo si hacen falta para clima, estación o disponibilidad regional.
 
+Usa las herramientas web autorizadas disponibles en el entorno y un intérprete Python 3.9 o posterior para el helper. Resuelve las rutas desde esta skill instalada; no presupongas sistema operativo, directorio de trabajo, cuenta de GitHub, localidad ni configuración del autor. Si falta una capacidad necesaria, explica qué no puedes verificar.
+
 ## Orden obligatorio
 
 1. Lee [references/source-policy.md](references/source-policy.md) antes de buscar o abrir fuentes.
